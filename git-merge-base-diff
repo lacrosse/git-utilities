@@ -1,0 +1,4 @@
+#!/bin/bash
+current_commitish=`git rev-parse --verify @`
+merge_base=`git merge-base $current_commitish $1`
+git diff $merge_base $1 $2
